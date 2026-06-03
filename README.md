@@ -1,36 +1,64 @@
-# Company Data Extraction Application
+# Company Data Extraction
 
-Description:
-The Company Data Extraction Application is a desktop application developed using PySimpleGUI and Selenium. Its primary objective is to retrieve publicly available data of companies in Brazil and save it in a structured Excel file. The application supports both Windows and macOS platforms.
+Automated CNPJ data pipeline · Python · Selenium · Excel
 
-Features:
+---
 
-User Interface: The application provides an intuitive and user-friendly interface for interacting with the program.
+## Overview
 
-Data Extraction: It utilizes Selenium to automate web scraping and extract data from public sources.
+Desktop application that automates the retrieval of publicly available company data from Brazilian government sources using CNPJ identifiers. Built to demonstrate real-world automation and data pipeline patterns applicable to industrial data acquisition and IoT backend workflows.
 
-Search Functionality: Users can search for company data using their unique identification numbers (CNPJ).
+---
 
-Data Storage: The application saves the extracted company data in an Excel file, allowing for easy organization and analysis.
+## Technical Highlights
 
-Multi-threading: The application utilizes multi-threading to enhance performance and allow for batch searches of multiple companies.
+**Automated data acquisition**
+Selenium-driven web scraping pipeline with robust error handling and retry logic — mirroring sensor polling patterns in IoT systems.
 
-Social media information: The optional search for social media platforms provides additional insights into a company's online presence.
+**Concurrent batch processing**
+Multi-threaded architecture allows simultaneous CNPJ lookups, keeping the UI responsive while background workers process data. Pattern reusable for parallel device communication in edge systems.
 
-Platform Compatibility: The application is compatible with both Windows and macOS operating systems, allowing users from different platforms to utilize its features.
+**Structured data output**
+Extraction results are normalized and written to Excel (.xlsx), enforcing a consistent schema regardless of source variability — the same concern found in industrial data historians and SCADA data export pipelines.
 
-Benefits:
+**Desktop GUI (PySimpleGUI)**
+Cross-platform interface targeting both Windows and macOS, with non-blocking feedback and progress reporting during long-running operations.
 
-Efficient Data Retrieval: The application automates the process of data extraction from public sources, saving time and effort.
+---
 
-Structured Data Storage: The extracted company data is organized in a structured manner within an Excel file, making it easy to manage and analyze.
+## Stack
 
-Batch Search Capability: Users can perform batch searches for multiple companies, enhancing productivity.
+Python 3.x · PySimpleGUI · Selenium · openpyxl · threading
 
-User-Friendly Interface: The application's intuitive interface ensures a smooth user experience, even for non-technical users.
+---
 
-Use Case: The Company Data Extraction Application can be used by professionals, researchers, and analysts who require access to accurate and up-to-date company information for various purposes such as market research, due diligence, and competitive analysis.
+## Installation
 
-Note: The application relies on publicly available data and does not access or retrieve any sensitive or private information.
+```bash
+git clone https://github.com/YOUR_USER/company-data-extraction
+cd company-data-extraction
+pip install -r requirements.txt
+python main.py
+```
 
-By leveraging PySimpleGUI and Selenium, the Company Data Extraction Application simplifies the process of gathering company data and enables users to efficiently manage and analyze the collected information.
+---
+
+## Usage
+
+1. Enter one or more CNPJ numbers (one per line)
+2. Click **Start** — background threads begin fetching data
+3. Monitor progress in the status panel
+4. Export result to Excel when complete
+
+---
+
+## Relevance to Industry 4.0
+
+The patterns demonstrated here — automated data acquisition, concurrent worker threads, schema-enforced structured output, and cross-platform desktop delivery — map directly to common requirements in industrial IoT: polling remote endpoints, aggregating heterogeneous data sources, and producing reports for MES/ERP integration.
+
+---
+
+## License
+
+MIT · Data sourced exclusively from public government registries.  
+No private or sensitive information is accessed or stored.
