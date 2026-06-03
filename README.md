@@ -35,7 +35,7 @@ Python 3.x · PySimpleGUI · Selenium · openpyxl · threading
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USER/company-data-extraction
+git clone https://github.com/Phernando82/busca_empresa.git
 cd company-data-extraction
 pip install -r requirements.txt
 python main.py
